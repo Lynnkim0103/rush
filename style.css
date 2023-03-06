@@ -1,0 +1,398 @@
+/* 초기값 */
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Nanum Gothic', sans-serif;;
+}
+
+/* 모바일 화면 */
+/* 상단네비게이션 */
+#wrap {
+  display: none;
+  width: 100vw; height: 40px;
+  text-align: center;
+  background-color: white;
+  opacity: 1;
+  position: fixed;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#nav {
+  width: 1100px; height: 40px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#left, #right {
+  text-align: center;
+  line-height: 40px;
+  float: left;
+}
+
+#left {
+  width: 600px; height: 40px;
+  margin-right: 15px;
+}
+
+#right {
+  width: 300px; height: 40px;
+}
+
+#left > a.gnb {
+  margin: 0 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 900;
+  color: black;
+}
+
+#right > a.lnb {
+  margin: 0 20px;
+  font-size: 16px;
+  color: black;
+}
+
+a.btn {
+  display: inline-block;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+/* 스프라이트이미지 */
+#right > #btn1 {
+  background: url(./img/css_sprites.png);
+  width: 40px;
+  background-position: 0 0;
+}
+#right > #btn2 {
+  background: url(./img/css_sprites.png);
+  width: 40px;
+  background-position: 40px 0;
+}
+#right > #btn3 {
+  background: url(./img/css_sprites.png);
+  width: 40px;
+  background-position: 80px 0;
+}
+
+/* 본문 */
+section {
+  width: 100vw; height: 1080px;
+}
+
+section.page1 {
+  background-image: url('./img/1.jpg');
+  background-size: cover;
+}
+
+section.page2 {
+  background-image: url('./img/2.jpg');
+  background-size: cover;
+}
+
+section.page3 {
+  background-image: url('./img/3.jpg');
+  background-size: cover;
+}
+
+section.page4 {
+  background-image: url('./img/4.jpg');
+  background-size: cover;
+}
+
+/* 좌측사이드바 */
+input[id="menuicon"] {
+  display: none;
+}
+
+input[id="menuicon"] + label {
+  display: block;
+  margin: 20px;
+  width: 30px; height: 22px;
+  position: relative;
+  position: fixed;
+  z-index: 2;
+}
+
+input[id="menuicon"] + label span {
+  display: block;
+  width: 100%; height: 3px;
+  background-color: black;
+  border-radius: 30px;
+  position: absolute;
+  transition: .35s;
+  z-index: 2;
+}
+
+input[id="menuicon"] + label span:nth-child(1) {
+  top: 0;
+  z-index: 2;
+}
+
+input[id="menuicon"] + label span:nth-child(2) {
+  top: 50%; transform: translateY(-50%);
+  z-index: 2;
+}
+
+input[id="menuicon"] + label span:nth-child(3) {
+  bottom: 0;
+  z-index: 2;
+}
+/* 에니메이션 */
+input[id="menuicon"]:checked + label span:nth-child(1) {
+  top: 50%; transform: translateY(-50%);
+  rotate: 45deg;
+}
+
+input[id="menuicon"]:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+
+input[id="menuicon"]:checked + label span:nth-child(3) {
+  bottom: 50%; transform: translateY(50%);
+  rotate: -45deg;
+}
+
+div[class="sidebar"] {
+  width: 130px; height: 70%;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0; left: -220px;
+  z-index: 1;
+  transition: 0.35s;
+  opacity: 0.9;
+}
+
+input[id="menuicon"]:checked + label + div {
+  left: 0;
+}
+
+div.sidebar > ul {
+  margin-top: 74px;
+  margin-left: 20px;
+}
+.menu > li > a {
+  display: block;
+  z-index: 3;
+}
+
+.top > li > a {
+  font-weight: 900;
+  font-size: 1.2em;
+  margin-bottom: 24px;
+  color: 000000;
+}
+
+.bottom {
+  margin-top: 50px;
+}
+
+.bottom > li > a {
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 24px;
+  color: 000000;
+}
+@media screen and (min-width:750px) {
+  
+  /* PC화면에서 볼때 */
+/* 상단네비게이션 */
+#wrap {
+  display: block;
+  width: 100vw; height: 40px;
+  text-align: center;
+  background-color: white;
+  opacity: 1;
+  position: fixed;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#nav {
+  width: 1100px; height: 40px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#left, #right {
+  text-align: center;
+  line-height: 40px;
+  float: left;
+}
+
+#left {
+  width: 600px; height: 40px;
+  margin-right: 15px;
+}
+
+#right {
+  width: 300px; height: 40px;
+}
+
+#left > a.gnb {
+  margin: 0 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: 900;
+  color: black;
+}
+
+#right > a.lnb {
+  margin: 0 20px;
+  font-size: 16px;
+  color: black;
+}
+
+a.btn {
+  display: inline-block;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+/* 스프라이트이미지 */
+#right > #btn1 {
+  background: url(./img/css_sprites.png);
+  width: 40px;
+  background-position: 0 0;
+}
+#right > #btn2 {
+  background: url(./img/css_sprites.png);
+  width: 40px;
+  background-position: 40px 0;
+}
+#right > #btn3 {
+  background: url(./img/css_sprites.png);
+  width: 40px;
+  background-position: 80px 0;
+}
+
+/* 본문 */
+section {
+  width: 100vw; height: 1080px;
+}
+
+section.page1 {
+  background-image: url('./img/1.jpg');
+  background-size: cover;
+}
+
+section.page2 {
+  background-image: url('./img/2.jpg');
+  background-size: cover;
+}
+
+section.page3 {
+  background-image: url('./img/3.jpg');
+  background-size: cover;
+}
+
+section.page4 {
+  background-image: url('./img/4.jpg');
+  background-size: cover;
+}
+
+/* 좌측사이드바 */
+input[id="menuicon"] {
+  display: none;
+}
+
+input[id="menuicon"] + label {
+  display: none;
+  margin: 20px;
+  width: 30px; height: 22px;
+  position: relative;
+  position: fixed;
+  z-index: 2;
+}
+
+input[id="menuicon"] + label span {
+  display: block;
+  width: 100%; height: 3px;
+  background-color: black;
+  border-radius: 30px;
+  position: absolute;
+  transition: .35s;
+  z-index: 2;
+}
+
+input[id="menuicon"] + label span:nth-child(1) {
+  top: 0;
+  z-index: 2;
+}
+
+input[id="menuicon"] + label span:nth-child(2) {
+  top: 50%; transform: translateY(-50%);
+  z-index: 2;
+}
+
+input[id="menuicon"] + label span:nth-child(3) {
+  bottom: 0;
+  z-index: 2;
+}
+/* 에니메이션 */
+input[id="menuicon"]:checked + label span:nth-child(1) {
+  top: 50%; transform: translateY(-50%);
+  rotate: 45deg;
+}
+
+input[id="menuicon"]:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+
+input[id="menuicon"]:checked + label span:nth-child(3) {
+  bottom: 50%; transform: translateY(50%);
+  rotate: -45deg;
+}
+
+div[class="sidebar"] {
+  width: 130px; height: 70%;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0; left: -220px;
+  z-index: 1;
+  transition: 0.35s;
+  opacity: 0.9;
+}
+
+input[id="menuicon"]:checked + label + div {
+  left: 0;
+}
+
+div.sidebar > ul {
+  margin-top: 74px;
+  margin-left: 20px;
+}
+.menu > li > a {
+  display: block;
+  z-index: 3;
+}
+
+.top > li > a {
+  font-weight: 900;
+  font-size: 1.2em;
+  margin-bottom: 24px;
+  color: 000000;
+}
+
+.bottom {
+  margin-top: 50px;
+}
+
+.bottom > li > a {
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 24px;
+  color: 000000;
+}
+}
